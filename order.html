@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Create Order">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Order Name" value={orderName} onchange={handleInputChange} data-id="orderName"></lightning-input>
+            <lightning-input label="Order External ID" value={orderExternalId} onchange={handleInputChange} data-id="orderExternalId"></lightning-input>
+            <lightning-input label="Total Amount" type="number" value={totalAmount} onchange={handleInputChange} data-id="totalAmount"></lightning-input>
+            <lightning-input label="Currency" value={currency} onchange={handleInputChange} data-id="currency"></lightning-input>
+            <lightning-input label="Order Date" type="datetime-local" value={orderDate} onchange={handleInputChange} data-id="orderDate"></lightning-input>
+            <lightning-input label="Shipping Method" value={shippingMethod} onchange={handleInputChange} data-id="shippingMethod"></lightning-input>
+        </div>
+        <lightning-button label="Submit" variant="brand" onclick={handleSubmit}></lightning-button>
+        <template if:true={responseMessage}>
+            <p>{responseMessage}</p>
+        </template>
+    </lightning-card>
+</template>
